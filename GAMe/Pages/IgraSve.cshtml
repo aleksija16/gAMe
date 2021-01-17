@@ -1,0 +1,32 @@
+﻿@page
+@model GAMe.Pages.IgraSveModel
+@{
+
+    ViewData["Title"] = "Igre";
+}
+
+
+<form method="post">
+    
+    <div class="row">
+        @foreach (var igra in Model.SveIgre)
+        {
+            <div class="column">
+                <div class="flip-card-znamenitosti">
+                    <div class="inner-znamenitosti">
+                        <div class="front-znamenitosti">
+                            <img src="https://play.co.rs/wp-content/uploads/2020/02/CSGO-Banner-24-3-2019.jpg" alt="Avatar" style="width:300px;height:200px; border-radius: 50px 20px;  ">
+                        </div>
+                        <div class="back-znamenitosti">
+                            <div class="text-center"><h2>@igra.naziv</h2></div>
+                            <div><a asp-page="./IgraJedna" asp-route-id="@igra.idIgra">Prikaži detalje <i class="fas fa-info-circle"></i></a></div>
+
+                            <div class="text-center"><h2>@igra.cena</h2></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</form>

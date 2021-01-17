@@ -1,0 +1,27 @@
+﻿@page
+@model GAMe.Pages.IgraJednaModel
+@{
+}
+
+<div class="card shadow mb-4 ">
+
+ <form method="get">
+        <div class="ZnamenitostGlavniDiv">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">@Model.TrenutnaIgra.naziv</h6>
+                </div>
+                        <div class="naziv">Zanr: @Model.TrenutnaIgra.zanr</div>
+
+
+                        <div class="naziv">Verzija:@Model.TrenutnaIgra.verzija</div>
+
+
+                        <div class="naziv">Opis:@Model.TrenutnaIgra.opis</div>
+
+
+                        <div class="naziv">Cena>@Model.TrenutnaIgra.cena</div>
+                    </div>
+            </div>
+  </form>
+ </div>
