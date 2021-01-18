@@ -2,3 +2,50 @@
 @model GAMe.Pages.RezervacijaSveModel
 @{
 }
+
+
+<div class="text-center">
+    <h1 class="display-4">Rezervacije</h1>
+</div>
+
+@if (SessionClass.TipKorisnika != null)
+{
+    <div>
+        <table class="table table-bordered">
+            <thead>
+            <th>ID rezervacije</th>
+            <th>Datum</th>
+            <th>Trajanje</th>
+
+            <th>Korisnik username</th>
+            <th>Id igre</th>
+            <th></th>
+            @if (SessionClass.TipKorisnika == "K")
+            {
+                <th></th>
+            }
+            </thead>
+            <tbody>
+                <form method="get">
+                    @foreach (var rezervacija in Model.SveRezervacije)
+                    {
+                        <tr>
+                            <td>@rezervacija.idRezervacija</td>
+                            <td> @Convert.ToString(string.Format("{0:dd/MM/yyyy}", @rezervacija.datum))</td>
+                            <td>@rezervacija.trajanje</td>
+                            <td>@rezervacija.korisnikUsername</td>
+                            <td>@rezervacija.igraId</td>
+                            <td><a asp-page="./RezervacijaJedna" asp-route-id="@rezervacija.idRezervacija">Prikaži detalje <i class="fas fa-calendar-day"></i></a></td>
+                           
+                        </tr>
+                    }
+                </form>
+            </tbody>
+        </table>
+    </div>
+
+}
+else
+{
+    <div class="alert alert-danger" role="alert" style="text-align: center;"><i class="fas fa-exclamation-triangle"></i> Morate biti ulogovani da biste videli svoje rezervacije. <i class="fas fa-exclamation-triangle"></i></div>
+}

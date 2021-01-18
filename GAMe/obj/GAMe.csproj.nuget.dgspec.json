@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aleksandra\\source\\repos\\NBP Cassandra\\GAMe\\GAMe\\GAMe.csproj": {}
+    "E:\\A Faks\\Naprebne baze podataka\\Projekti\\GAMe\\gAMe\\GAMe\\GAMe.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aleksandra\\source\\repos\\NBP Cassandra\\GAMe\\GAMe\\GAMe.csproj": {
+    "E:\\A Faks\\Naprebne baze podataka\\Projekti\\GAMe\\gAMe\\GAMe\\GAMe.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aleksandra\\source\\repos\\NBP Cassandra\\GAMe\\GAMe\\GAMe.csproj",
+        "projectUniqueName": "E:\\A Faks\\Naprebne baze podataka\\Projekti\\GAMe\\gAMe\\GAMe\\GAMe.csproj",
         "projectName": "GAMe",
-        "projectPath": "C:\\Users\\Aleksandra\\source\\repos\\NBP Cassandra\\GAMe\\GAMe\\GAMe.csproj",
+        "projectPath": "E:\\A Faks\\Naprebne baze podataka\\Projekti\\GAMe\\gAMe\\GAMe\\GAMe.csproj",
         "packagesPath": "C:\\Users\\Aleksandra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aleksandra\\source\\repos\\NBP Cassandra\\GAMe\\GAMe\\obj\\",
+        "outputPath": "E:\\A Faks\\Naprebne baze podataka\\Projekti\\GAMe\\gAMe\\GAMe\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Aleksandra\\AppData\\Roaming\\NuGet\\NuGet.Config",

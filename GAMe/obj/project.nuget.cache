@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MjB54owrIfFfOpLCX5dn2cH02CvXOvISbhdxj5x2cXsXdCfQ+mMIVm20UX++5HuUoGGxfoskOl/scQOcEVun7g==",
+  "dgSpecHash": "c4jPwk2Kg3e/RvopugZXmh3Ti6/cEPKyYSeaa86cRPP89ffFMkfYBHnGHq/itk2S9ab+50Bp846FyfcYc242ZQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aleksandra\\source\\repos\\NBP Cassandra\\GAMe\\GAMe\\GAMe.csproj",
+  "projectFilePath": "E:\\A Faks\\Naprebne baze podataka\\Projekti\\GAMe\\gAMe\\GAMe\\GAMe.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Aleksandra\\.nuget\\packages\\aspnetcore.identity.cassandra\\1.0.0-alpha1\\aspnetcore.identity.cassandra.1.0.0-alpha1.nupkg.sha512",
     "C:\\Users\\Aleksandra\\.nuget\\packages\\cassandracsharpdriver\\3.16.1\\cassandracsharpdriver.3.16.1.nupkg.sha512",
