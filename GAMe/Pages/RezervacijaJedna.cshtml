@@ -12,8 +12,10 @@
         <form method="get">
 
             <div class="naziv">Id rezervacije: @Model.TrenutnaRezervacija.idRezervacija</div>
-            <div class="naziv"><i class="fas fa-gamepad"></i>  <a asp-page="./IgraJedna" asp-route-id="@Model.TrenutnaIgra.idIgra" style="color:rgb(188,44,186);">@Model.TrenutnaIgra.naziv </a>
+            @if (Model.TrenutnaIgra.naziv != null)
+            {                    <div class="naziv"><i class="fas fa-gamepad"></i>  <a asp-page="./IgraJedna" asp-route-id="@Model.TrenutnaIgra.idIgra" style="color:rgb(188,44,186);">@Model.TrenutnaIgra.naziv </a>
             </div>
+            }
             <div class="naziv"><i class="fas fa-calendar-day"></i> @Model.TrenutnaRezervacija.datum</div>
             <div class="naziv"><i class="fas fa-clock"></i> @Model.TrenutnaRezervacija.trajanje </div>
 

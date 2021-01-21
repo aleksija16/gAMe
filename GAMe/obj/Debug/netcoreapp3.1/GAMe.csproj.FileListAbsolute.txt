@@ -63,7 +63,6 @@ E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\bin\Debug\netcoreapp3.1
 E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\bin\Debug\netcoreapp3.1\System.CodeDom.dll
 E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\bin\Debug\netcoreapp3.1\System.Management.dll
 E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Management.dll
-E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\GAMe.csprojAssemblyReference.cache
 E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\GAMe.AssemblyInfoInputs.cache
 E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\GAMe.AssemblyInfo.cs
 E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\GAMe.csproj.CoreCompileInputs.cache
@@ -103,3 +102,4 @@ E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1
 E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\Razor\Pages\IgraObrisi.cshtml.g.cs
 E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\Razor\Pages\IgraIzmeni.cshtml.g.cs
 E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\Razor\Pages\Odjava.cshtml.g.cs
+E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\GAMe.csprojAssemblyReference.cache

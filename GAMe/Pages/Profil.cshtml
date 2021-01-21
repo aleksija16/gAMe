@@ -41,8 +41,16 @@
                             <td>@rezervacija.igra</td>
                             <td>@rezervacija.datum</td>
                             <td>@rezervacija.trajanje</td>
-                            <td><a asp-page="./RezervacijaJedna" asp-route-id="@rezervacija.idRezervacija">Prikaži detalje <i class="fas fa-calendar-day"></i></a></td>
-                       </tr>
+                            @if (Convert.ToDateTime(@rezervacija.datum) > DateTime.Now)
+                            {
+                                <td><a asp-page="./RezervacijaOtkazi" asp-route-id="@rezervacija.idRezervacija">Otkaži rezervaciju <i class="fas fa-calendar-times"></i></a></td>
+                            }
+                            else
+                            {
+                                <td></td>
+
+                            }
+                        </tr>
                             }
                         </form>
                 </tbody>

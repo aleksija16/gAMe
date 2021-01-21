@@ -253,8 +253,5 @@ for details on configuring this project to bundle and minify static web assets. 
     
     html {
         background: url('https://wallpaperaccess.com/full/1553991.jpg') no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
         background-size: cover;
     }

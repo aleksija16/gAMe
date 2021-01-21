@@ -17,28 +17,26 @@ namespace GAMe.Pages
         public Igra TrenutnaIgra { get; set; }
 
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public IActionResult OnGet(int id)
         {
-            ISession session = await SessionManager.GetSessionAsync();
+            ISession sess = SessionManager.session;
             TrenutnaRezervacija = new Rezervacija();
             TrenutnaIgra = new Igra();
-            if (session == null)
-                return null;
 
-            Row rezervacijaJedna = session.Execute("select * from Rezervacija where idrezervacija  = " + id + "").FirstOrDefault();
-            Row igraJedna = session.Execute("select * from Igra where idigra  = " + (int)rezervacijaJedna["igra"] + "").FirstOrDefault();
+            Row rezervacijaJedna = sess.Execute("select * from Rezervacija where idrezervacija  = " + id + "").FirstOrDefault();
+            Row igraJedna = sess.Execute("select * from Igra where idigra  = " + (int)rezervacijaJedna["igra"] + "").FirstOrDefault();
             if (rezervacijaJedna != null)
             {
-                TrenutnaIgra.naziv = igraJedna["naziv"].ToString();
+                TrenutnaRezervacija.idRezervacija =id;
                 TrenutnaRezervacija.datum = rezervacijaJedna["datum"].ToString();
                 TrenutnaRezervacija.trajanje = rezervacijaJedna["trajanje"].ToString();
-                
+
             }
             if (igraJedna != null)
             {
                 TrenutnaIgra.naziv = igraJedna["naziv"].ToString();
             }
-                return Page();
+            return Page();
         }
     }
 }

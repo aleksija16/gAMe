@@ -13,16 +13,16 @@ namespace GAMe.Pages
     {
         [BindProperty]
         public Igra TrenutnaIgra { get; set; }
-     
-        public async Task<IActionResult> OnGetAsync(int id)
+
+        public IActionResult OnGet(int id)
         {
-            ISession session = await SessionManager.GetSessionAsync();
+
+            ISession sess = SessionManager.session;
+
             TrenutnaIgra = new Igra();
 
-            if (session == null)
-                return null;
 
-            Row igraJedna = session.Execute("select * from Igra where idigra  = " + id + "").FirstOrDefault();
+            Row igraJedna = sess.Execute("select * from Igra where idigra  = " + id + "").FirstOrDefault();
 
             if (igraJedna != null)
             {
@@ -31,8 +31,8 @@ namespace GAMe.Pages
                 TrenutnaIgra.verzija = igraJedna["verzija"] != null ? igraJedna["verzija"].ToString() : string.Empty;
                 TrenutnaIgra.opis = igraJedna["opis"] != null ? igraJedna["opis"].ToString() : string.Empty;
                 TrenutnaIgra.cena = igraJedna["cena"] != null ? igraJedna["cena"].ToString() : string.Empty;
-            TrenutnaIgra.slika = igraJedna["slika"] != null ? igraJedna["slika"].ToString() : string.Empty;
-           
+                TrenutnaIgra.slika = igraJedna["slika"] != null ? igraJedna["slika"].ToString() : string.Empty;
+
             }
 
             return Page();

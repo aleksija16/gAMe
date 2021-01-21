@@ -14,16 +14,16 @@ namespace GAMe.Pages
         [BindProperty]
         public Igra TrenutnaIgra { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public IActionResult OnGet(int id)
         {
 
-            ISession session =await SessionManager.GetSessionAsync();
+
+            ISession sess = SessionManager.session;
+
             TrenutnaIgra = new Igra();
 
-            if (session == null)
-                return null;
 
-            Row igraJedna = session.Execute("select * from Igra where idigra  = " + id + "").FirstOrDefault();
+            Row igraJedna = sess.Execute("select * from Igra where idigra  = " + id + "").FirstOrDefault();
 
             if (igraJedna != null)
             {
@@ -37,14 +37,16 @@ namespace GAMe.Pages
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int id)
+        public IActionResult OnPost(int id)
         {
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-            ISession session = await SessionManager.GetSessionAsync();
-            session.Execute("update Igra SET naziv = '" + TrenutnaIgra.naziv + "',  zanr = '" + TrenutnaIgra.zanr + "', verzija = '" + TrenutnaIgra.verzija + "', opis = '" + TrenutnaIgra.opis + "', cena = '" + TrenutnaIgra.cena + "'  WHERE idigra = " + id + "");
+
+            ISession sess = SessionManager.session;
+
+            sess.Execute("update Igra SET naziv = '" + TrenutnaIgra.naziv + "',  zanr = '" + TrenutnaIgra.zanr + "', verzija = '" + TrenutnaIgra.verzija + "', opis = '" + TrenutnaIgra.opis + "', cena = '" + TrenutnaIgra.cena + "'  WHERE idigra = " + id + "");
 
             return RedirectToPage("./IgraJedna", new { id = id });
         }

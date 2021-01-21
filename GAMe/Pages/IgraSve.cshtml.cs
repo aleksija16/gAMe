@@ -11,16 +11,17 @@ namespace GAMe.Pages
 {
     public class IgraSveModel : PageModel
     {
-
         [BindProperty]
         public IList<Igra> SveIgre { get; set; }
-        public async Task OnGetAsync()
+        public void OnGet()
         {
-            ISession session = await SessionManager.GetSessionAsync();
+
+            ISession sess = SessionManager.session;
+
             SveIgre = new List<Igra>();
 
-            var sveIgre = session.Execute("select * from Igra");
-            
+            var sveIgre = sess.Execute("select * from Igra");
+
             foreach (var igraSve in sveIgre)
             {
                 Igra igra = new Igra();

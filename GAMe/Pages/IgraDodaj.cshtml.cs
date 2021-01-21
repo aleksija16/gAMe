@@ -15,7 +15,7 @@ namespace GAMe.Pages
         [BindProperty]
         public Igra NovaIgra { get; set; }
 
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
@@ -23,13 +23,14 @@ namespace GAMe.Pages
             }
             else
             {
-                ISession session =await SessionManager.GetSessionAsync();
 
-                Row nextId = session.Execute("select * from Id where naziv='igra'").FirstOrDefault();
+                ISession sess = SessionManager.session;
+
+                Row nextId = sess.Execute("select * from Id where naziv='igra'").FirstOrDefault();
                 int id = (int)nextId["next"];
-                RowSet igraNova = session.Execute("insert into Igra (idigra, naziv,zanr, verzija,opis,cena,slika) values ("+id+",'" + NovaIgra.naziv + "','" + NovaIgra.zanr + "','" + NovaIgra.verzija + "','" + NovaIgra.opis + "','" + NovaIgra.cena +"','" + NovaIgra.slika +"')");
+                RowSet igraNova = sess.Execute("insert into Igra (idigra, naziv,zanr, verzija,opis,cena,slika) values (" + id + ",'" + NovaIgra.naziv + "','" + NovaIgra.zanr + "','" + NovaIgra.verzija + "','" + NovaIgra.opis + "','" + NovaIgra.cena + "','" + NovaIgra.slika + "')");
                 id++;
-                session.Execute("update Id SET next = "+ id +" WHERE naziv = 'igra' ");
+                sess.Execute("update Id SET next = " + id + " WHERE naziv = 'igra' ");
 
                 return RedirectToPage("./IgraSve");
             }

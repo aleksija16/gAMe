@@ -3,9 +3,6 @@
 @{
 }
 
-
-
-
 <form method="post">
     <div class="prijava">
             <input type="text" placeholder="Korisnicko ime" asp-for="TrenutniKorisnik.username">
@@ -19,7 +16,7 @@
 
 @if (Model.SessionId == -1)
 {
-    <div class="prijava">
+    <div style="text-align:center">
         <div class="alert alert-danger" role="alert">
             <i class="fas fa-exclamation-triangle"></i> Uneli ste pogresno korisnicko ime ili lozinku. <i class="fas fa-exclamation-triangle"></i>
         </div>

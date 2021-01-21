@@ -19,14 +19,12 @@ namespace GAMe.Pages
         [BindProperty]
         public string DanasnjiDatum { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int id)
+        public IActionResult OnGet(int id)
         {
-            ISession session = await SessionManager.GetSessionAsync();
 
-            if (session == null)
-                return null;
+            ISession sess = SessionManager.session;
 
-            Row igra = session.Execute("select * from Igra where \"idigra\"  = " + id + "").FirstOrDefault();
+            Row igra = sess.Execute("select * from Igra where \"idigra\"  = " + id + "").FirstOrDefault();
 
 
             String month = DateTime.Now.Month.ToString();
@@ -48,19 +46,20 @@ namespace GAMe.Pages
 
             return this.Page();
         }
-        public async Task<IActionResult> OnPostAsync(int id)
+        public IActionResult OnPost(int id)
         {
             if (RezervacijaIgre == null)
             {
                 return this.Page();
             }
-            ISession session = await SessionManager.GetSessionAsync();
 
-            Row nextId = session.Execute("select * from Id where naziv='rezervacija'").FirstOrDefault();
+            ISession sess = SessionManager.session;
+
+            Row nextId = sess.Execute("select * from Id where naziv='rezervacija'").FirstOrDefault();
             int stariId = (int)nextId["next"];
-            RowSet igraNova = session.Execute("insert into Rezervacija (idrezervacija, korisnik,igra,datum,trajanje) values (" + stariId + ",'" + SessionClass.UsernameKorisnika+ "'," + id + ",'" + RezervacijaIgre.datum.ToString()+ "','" + RezervacijaIgre.trajanje + "')");
-            int noviId=stariId+1;
-            session.Execute("update Id SET next = " + noviId + " WHERE naziv = 'rezervacija' ");
+            RowSet igraNova = sess.Execute("insert into Rezervacija (idrezervacija, korisnik,igra,datum,trajanje) values (" + stariId + ",'" + SessionClass.UsernameKorisnika + "'," + id + ",'" + RezervacijaIgre.datum.ToString() + "','" + RezervacijaIgre.trajanje + "')");
+            int noviId = stariId + 1;
+            sess.Execute("update Id SET next = " + noviId + " WHERE naziv = 'rezervacija' ");
 
             return RedirectToPage("./RezervacijaJedna", new { id = stariId, });
 

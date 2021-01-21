@@ -16,7 +16,7 @@ namespace GAMe.Pages
         public Korisnik TrenutniKorisnik { get; set; }
         public Korisnik PostojiKorisnik { get; set; }
         public int SessionId { get; set; }
-        public async Task<IActionResult> OnPostAsync()
+        public IActionResult OnPost()
         {
             if (!ModelState.IsValid)
             {
@@ -24,13 +24,15 @@ namespace GAMe.Pages
             }
             else
             {
-                ISession session = await SessionManager.GetSessionAsync();
+
+                ISession sess = SessionManager.session;
+
                 PostojiKorisnik = new Korisnik();
 
 
-                Row postojiKorisnik = session.Execute("select * from Korisnik where username='" + TrenutniKorisnik.username + "'").FirstOrDefault();
+                Row postojiKorisnik = sess.Execute("select * from Korisnik where username='" + TrenutniKorisnik.username + "'").FirstOrDefault();
 
-                if (postojiKorisnik != null)
+                if (postojiKorisnik != null && postojiKorisnik["password"].ToString() == TrenutniKorisnik.password)
                 {
 
                     PostojiKorisnik.ime = postojiKorisnik["ime"] != null ? postojiKorisnik["ime"].ToString() : string.Empty;
