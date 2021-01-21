@@ -2,3 +2,20 @@
 @model GAMe.Pages.RezervacijaJednaModel
 @{
 }
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Podaci o rezervaciji</h6>
+    </div>
+    <div class="card-body">
+
+        <form method="get">
+
+            <div class="naziv">Id rezervacije: @Model.TrenutnaRezervacija.idRezervacija</div>
+            <div class="naziv"><i class="fas fa-gamepad"></i>  <a asp-page="./IgraJedna" asp-route-id="@Model.TrenutnaIgra.idIgra" style="color:rgb(188,44,186);">@Model.TrenutnaIgra.naziv </a>
+            </div>
+            <div class="naziv"><i class="fas fa-calendar-day"></i> @Model.TrenutnaRezervacija.datum</div>
+            <div class="naziv"><i class="fas fa-clock"></i> @Model.TrenutnaRezervacija.trajanje </div>
+
+        </form>
+    </div>

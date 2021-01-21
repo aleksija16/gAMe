@@ -13,9 +13,9 @@ namespace GAMe.Pages
     {
         [BindProperty]
         public IList<Rezervacija> SveRezervacije { get; set; }
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-            ISession session = SessionManager.GetSession();
+            ISession session = await SessionManager.GetSessionAsync();
             SveRezervacije = new List<Rezervacija>();
 
             var sveRezervacije = session.Execute("select * from Rezervacija");
@@ -23,10 +23,10 @@ namespace GAMe.Pages
             foreach (var rezervacijaSve in sveRezervacije)
             {
                 Rezervacija rezervacija = new Rezervacija();
-                rezervacija.idRezervacija = (int)rezervacijaSve["idrezevacija"];
-                rezervacija.korisnikUsername = rezervacijaSve["korisnikusername"].ToString();
-                rezervacija.igraId = (int)rezervacijaSve["igraId"];
-                rezervacija.datum = (DateTime)rezervacijaSve["datum"];
+                rezervacija.idRezervacija = (int)rezervacijaSve["idrezervacija"];
+                rezervacija.korisnik = rezervacijaSve["korisnik"].ToString();
+                rezervacija.igra = (int)rezervacijaSve["igra"];
+                rezervacija.datum = rezervacijaSve["datum"].ToString();
                 rezervacija.trajanje =rezervacijaSve["trajanje"].ToString();
 
                 SveRezervacije.Add(rezervacija);

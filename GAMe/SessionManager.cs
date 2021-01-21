@@ -10,12 +10,12 @@ namespace GAMe
     {
         public static ISession session;
 
-        public static ISession GetSession()
+        public static async Task<ISession> GetSessionAsync()
         {
             if (session == null)
             {
                 Cluster cluster = Cluster.Builder().AddContactPoint("127.0.0.1").Build();
-                session = cluster.Connect("game");
+                session = await cluster.ConnectAsync("game");
             }
 
             return session;

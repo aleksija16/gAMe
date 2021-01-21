@@ -13,5 +13,6 @@ namespace GAMe.Model
         public string verzija { get; set; }
         public string opis { get; set; }
         public string cena { get; set; }
+        public string slika { get; set; }
     }
 }

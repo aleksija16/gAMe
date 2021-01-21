@@ -14,9 +14,9 @@ namespace GAMe.Pages
 
         [BindProperty]
         public IList<Igra> SveIgre { get; set; }
-        public void OnGet()
+        public async Task OnGetAsync()
         {
-            ISession session = SessionManager.GetSession();
+            ISession session = await SessionManager.GetSessionAsync();
             SveIgre = new List<Igra>();
 
             var sveIgre = session.Execute("select * from Igra");
@@ -25,11 +25,12 @@ namespace GAMe.Pages
             {
                 Igra igra = new Igra();
                 igra.idIgra = (int)igraSve["idigra"];
-                igra.naziv = igraSve["naziv"] != null ? igraSve["naziv"].ToString() : string.Empty;
+                igra.naziv = igraSve["naziv"].ToString();
                 igra.zanr = igraSve["zanr"] != null ? igraSve["zanr"].ToString() : string.Empty;
                 igra.verzija = igraSve["verzija"] != null ? igraSve["verzija"].ToString() : string.Empty;
                 igra.opis = igraSve["opis"] != null ? igraSve["opis"].ToString() : string.Empty;
                 igra.cena = igraSve["cena"] != null ? igraSve["cena"].ToString() : string.Empty;
+                igra.slika = igraSve["slika"] != null ? igraSve["slika"].ToString() : string.Empty;
 
                 SveIgre.Add(igra);
             }

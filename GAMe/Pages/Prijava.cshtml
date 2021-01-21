@@ -8,14 +8,12 @@
 
 <form method="post">
     <div class="prijava">
-        <div id="formContent">
             <input type="text" placeholder="Korisnicko ime" asp-for="TrenutniKorisnik.username">
             <input type="password" placeholder="Lozinka" asp-for="TrenutniKorisnik.password">
-            <input type="submit" value="Prijavi se" class="dugme" />
-            <div class="d-flex justify-content-center links">
+            <input type="submit" value="Prijavi se" class="btn-primary" />
+            <div class="d-flex justify-content-center links" style="color:white">
                 Nemaš nalog?<a href="/Registracija">Registruj se <i class="far fa-id-badge"></i></a>
             </div>
-        </div>
     </div>
 </form>
 

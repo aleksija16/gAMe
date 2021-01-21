@@ -16,7 +16,7 @@ namespace GAMe.Pages
         public Korisnik TrenutniKorisnik { get; set; }
         public Korisnik PostojiKorisnik { get; set; }
         public int SessionId { get; set; }
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
@@ -24,7 +24,7 @@ namespace GAMe.Pages
             }
             else
             {
-                ISession session = SessionManager.GetSession();
+                ISession session = await SessionManager.GetSessionAsync();
                 PostojiKorisnik = new Korisnik();
 
 

@@ -20,12 +20,6 @@ namespace GAMe.Pages
 
         public void OnGet()
         {
-            ISession session = SessionManager.GetSession();
-
-            if (session == null)
-                return;
-
-            RowSet guestData = session.Execute("insert into Igra(idIgra, naziv, zanr,verzija, opis, cena) values (1, 'Counter Strike', 'Arkadne', '1.0','Ovo je igra', '5000din')");
 
         }
     }

@@ -1,0 +1,25 @@
+﻿@page
+@model GAMe.Pages.IgraDodajModel
+@{
+}
+
+@if (SessionClass.TipKorisnika == "A")
+{
+    <form method="post">
+      
+        <div class="dodaj">
+                <input asp-for="NovaIgra.naziv" placeholder="Naziv" required />
+                <input asp-for="NovaIgra.zanr" placeholder="Zanr" required />
+                <input asp-for="NovaIgra.verzija" placeholder="Verzija" required />
+                <input asp-for="NovaIgra.opis"  placeholder="Opis" required />
+                <input asp-for="NovaIgra.cena" placeholder="Cena" required />
+                <label class="form-control">Dodajte sliku:</label> <input type="file" asp-for="NovaIgra.slika"  placeholder="Slika" required />
+                <button type="submit" class="btn-primary">Dodaj novu igru</button>
+         
+        </div>
+    </form>
+}
+else
+{
+    <div class="alert alert-danger" role="alert" style="text-align: center;"><i class="fas fa-exclamation-triangle"></i> Nemate pristup ovoj stranici, samo admin može da dodaje znamenitosti. <i class="fas fa-exclamation-triangle"></i></div>
+}

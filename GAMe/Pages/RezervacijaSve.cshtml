@@ -33,8 +33,8 @@
                             <td>@rezervacija.idRezervacija</td>
                             <td> @Convert.ToString(string.Format("{0:dd/MM/yyyy}", @rezervacija.datum))</td>
                             <td>@rezervacija.trajanje</td>
-                            <td>@rezervacija.korisnikUsername</td>
-                            <td>@rezervacija.igraId</td>
+                            <td>@rezervacija.korisnik</td>
+                            <td>@rezervacija.igra</td>
                             <td><a asp-page="./RezervacijaJedna" asp-route-id="@rezervacija.idRezervacija">Prikaži detalje <i class="fas fa-calendar-day"></i></a></td>
                            
                         </tr>

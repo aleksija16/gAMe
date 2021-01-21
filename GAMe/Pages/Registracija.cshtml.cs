@@ -18,7 +18,7 @@ namespace GAMe.Pages
         public bool PostojiVec { get; set; }
 
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
@@ -26,7 +26,7 @@ namespace GAMe.Pages
             }
             else
             {
-                ISession session = SessionManager.GetSession();
+                ISession session =await  SessionManager.GetSessionAsync();
 
                 Row postojiKorisnik = session.Execute("select * from Korisnik where username='"+ NoviKorisnik.username+ "'").FirstOrDefault();
 

@@ -2,26 +2,19 @@
 @model GAMe.Pages.IgraJednaModel
 @{
 }
-
-<div class="card shadow mb-4 ">
-
+<div class="containter">
  <form method="get">
-        <div class="ZnamenitostGlavniDiv">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
+            <div class="card">
+                <div class="card-header">
                     <h6 class="m-0 font-weight-bold text-primary">@Model.TrenutnaIgra.naziv</h6>
                 </div>
-                        <div class="naziv">Zanr: @Model.TrenutnaIgra.zanr</div>
-
-
-                        <div class="naziv">Verzija:@Model.TrenutnaIgra.verzija</div>
-
-
-                        <div class="naziv">Opis:@Model.TrenutnaIgra.opis</div>
-
-
-                        <div class="naziv">Cena>@Model.TrenutnaIgra.cena</div>
+                    <div><h4>Zanr:<label class="igraLabel">@Model.TrenutnaIgra.zanr</label></h4></div>
+                    <div><h4>Verzija:<label class="igraLabel">@Model.TrenutnaIgra.verzija</label></h4></div>
+                    <div><h4>Opis:<label class="igraLabel">@Model.TrenutnaIgra.opis</label></h4></div>
+                    <div><h4>Cena:<label class="igraLabel">@Model.TrenutnaIgra.cena</label></h4></div>
+                    <div style="position: center;">
+                    <img src="images/@Model.TrenutnaIgra.slika" alt="Avatar" style="width: 100%;"> 
                     </div>
             </div>
-  </form>
- </div>
+</form>
+</div>

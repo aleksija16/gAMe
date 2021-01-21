@@ -98,3 +98,8 @@ E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1
 E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\GAMe.dll
 E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\GAMe.pdb
 E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\GAMe.genruntimeconfig.cache
+E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\Razor\Pages\IgraDodaj.cshtml.g.cs
+E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\Razor\Pages\IgraRezervisi.cshtml.g.cs
+E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\Razor\Pages\IgraObrisi.cshtml.g.cs
+E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\Razor\Pages\IgraIzmeni.cshtml.g.cs
+E:\A Faks\Naprebne baze podataka\Projekti\GAMe\gAMe\GAMe\obj\Debug\netcoreapp3.1\Razor\Pages\Odjava.cshtml.g.cs

@@ -1,0 +1,22 @@
+﻿@page
+@model GAMe.Pages.IgraObrisiModel
+@{
+}
+
+@if (SessionClass.TipKorisnika == "A")
+{
+    <div class="obrisi">
+        <div id="formContent">
+            <form method="post">
+                <h5 style="color:white;">Da li ste sigurni da želite da obrišete igru?</h5>
+                <button type="submit" class="btn btn-danger">Da</button>
+                <a asp-page="./IgraSve">Ne</a>
+
+            </form>
+        </div>
+    </div>
+}
+else
+{
+    <div class="alert alert-danger" role="alert" style="text-align: center;"><i class="fas fa-exclamation-triangle"></i> Nemate pristup ovoj stranici, samo admin može da obriše znamenitost. <i class="fas fa-exclamation-triangle"></i></div>
+}

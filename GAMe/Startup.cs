@@ -28,11 +28,6 @@ namespace GAMe
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
-
-            ISession session = SessionManager.GetSession();
-
-            if (session == null)
-                return;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
