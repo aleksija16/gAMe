@@ -1,0 +1,42 @@
+Kreirati keyspace: Game
+
+CREATE TABLE Igra (
+    idigra int,
+    naziv text,
+    zanr text,
+    verzija text,
+    opis text,
+    cena text,
+    slika text,
+    PRIMARY KEY (idigra)
+)
+
+
+CREATE TABLE Korisnik (
+    username text,
+    password text,
+    ime text,
+    prezime text,
+    telefon text,
+    tipKorisnika text,
+    PRIMARY KEY (username)
+)
+
+CREATE TABLE Rezervacija(
+    idrezervacija int,
+    korisnik text,
+    igra int,
+    datum text,
+    trajanje text,
+    PRIMARY KEY (idrezervacija)
+)
+
+CREATE TABLE Id(
+    naziv text,
+    next int,
+    PRIMARY KEY(naziv)
+)
+
+INSERT INTO Korisnik (username, password, tipkorisnika) VALUES ('admin', 'admin', 'A')
+INSERT INTO Id (naziv, next) VALUES ('igra',1)
+INSERT INTO Id (naziv, next) VALUES ('rezervacija',1)
