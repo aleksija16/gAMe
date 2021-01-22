@@ -34,6 +34,7 @@ namespace GAMe.Pages
             }
             if (igraJedna != null)
             {
+                TrenutnaIgra.idIgra = (int)rezervacijaJedna["igra"];
                 TrenutnaIgra.naziv = igraJedna["naziv"].ToString();
             }
             return Page();
