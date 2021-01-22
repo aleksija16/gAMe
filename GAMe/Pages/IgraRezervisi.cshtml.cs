@@ -24,7 +24,7 @@ namespace GAMe.Pages
 
             ISession sess = SessionManager.session;
 
-            Row igra = sess.Execute("select * from Igra where idigra  = " + id + "").FirstOrDefault();
+            Row igra = sess.Execute("select * from Igra where idigra= " + id + "").FirstOrDefault();
 
 
             String month = DateTime.Now.Month.ToString();
